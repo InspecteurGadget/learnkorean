@@ -3,6 +3,8 @@ package LearnKorean;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+
 import javax.swing.*;
 
 public class MainWindow extends JFrame implements ActionListener {
@@ -11,7 +13,10 @@ public class MainWindow extends JFrame implements ActionListener {
 	private JPanel southPanel;
 	private QuizzWindow qW = null;
 	private JButton sQuizz;
+	
+	private LBtn[] clonedList = new LBtn[letterList.length];
 
+	
 public MainWindow(String title) {
     super(title);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -30,12 +35,20 @@ public MainWindow(String title) {
     setVisible(true);
 
   }
-
+/*public LBtn[] getLetterList(){
+	for ( int i = 0; i < letterList.length; i++){
+		clonedList[i] = new LBtn(letterList[i]);
+	}
+	return clonedList;*/
+	
+}
 @Override
 public void actionPerformed(ActionEvent e) {
 	Object src = e.getSource();
 	if (src == sQuizz) {
+		qW.pack();
 		qW.setVisible(true);
+		
 	}
 	
 }
