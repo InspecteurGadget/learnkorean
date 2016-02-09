@@ -17,7 +17,7 @@ public class MainWindow extends JFrame implements ActionListener {
 public MainWindow(String title) {
     super(title);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setPreferredSize(new Dimension(350, 400));
+    setPreferredSize(new Dimension(400, 450));
     setLocationRelativeTo(null);
     
     learnPanel = new LPanel(this);
